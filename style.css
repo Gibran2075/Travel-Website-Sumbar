@@ -1,0 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Navbar Start */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 34px;
+  position: relative;
+  z-index: 10;
+}
+
+.brand-title {
+  font-weight: 800;
+  font-size: 1.6rem;
+}
+
+.navbar-links ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar-links ul li {
+  padding: 0 15px;
+  position: relative;
+}
+
+.navbar-links ul li a {
+  color: black;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 8px 12px;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-links ul li a:hover {
+  background-color: #b2ff1a;
+  border-radius: 4px;
+}
+
+.hamburger {
+  display: none;
+  font-size: 20px;
+  font-weight: 800;
+  color: black;
+  position: relative;
+  z-index: 10001;
+}
+
+#closeHam {
+  display: none;
+}
+/* Navbar End */
+
+/* Title Start */
+.question {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 68px;
+}
+
+.question-tittle {
+  font-weight: bold;
+  font-size: 54px;
+}
+/* Title Start */
+
+/* Table list start */
+.akomodasi {
+  display: flex;
+  position: relative;
+  width: 100%;
+  margin: 38px 0;
+  justify-content: center;
+}
+
+.list-akomodasi {
+  display: flex;
+  padding: 24px 0;
+  gap: 28px;
+  display: inline-flex;
+}
+
+.list-menu-akomodasi {
+  padding: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.list-menu-akomodasi::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #b2ff1a;
+  transition: transform 0.25s ease-out;
+}
+
+.list-menu-akomodasi:hover::after {
+  transform: scaleX(1);
+}
+
+.list-menu-akomodasi::after {
+  transform-origin: bottom right;
+}
+
+.list-menu-akomodasi:hover::after {
+  transform-origin: bottom left;
+}
+
+div .list-menu-akomodasi i {
+  font-size: 30px;
+  padding-right: 6px;
+}
+
+div .list-menu-akomodasi span {
+  font-size: 22px;
+}
+
+.search-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: -28px;
+}
+
+/* container utama */
+.search-box {
+  display: flex;
+  align-items: center;
+  background-color: #f8f8f8;
+  border: 1px solid #e5e5e5;
+  border-radius: 40px;
+  overflow: hidden;
+  width: 90%;
+  max-width: 1000px;
+  height: 64px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  padding: 0 10px;
+}
+
+/* ikon di kiri */
+.search-icon {
+  color: #333;
+  font-size: 24px;
+  margin-left: 14px;
+}
+
+/* input text */
+.search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 22px;
+  color: #111;
+  padding: 0 12px;
+}
+
+.search-input::placeholder {
+  color: #888;
+}
+
+/* tombol di kanan */
+.search-btn {
+  background-color: #00e676; /* hijau khas TripAdvisor */
+  color: #003a17;
+  font-weight: 600;
+  border: none;
+  height: 44px;
+  padding: 0 24px;
+  border-radius: 9999px; /* buat bulat penuh */
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.search-btn:hover {
+  background-color: #00cc66;
+}
+
+.search-btn:active {
+  transform: scale(0.98);
+}
+/* Table list end */
+
+/* Mobile responsive */
+@media screen and (max-width: 768px) {
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  .navbar-links ul {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar-links ul li {
+    padding: 10px 0;
+  }
+
+  .hamburger {
+    display: flex;
+    cursor: pointer;
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+
+  .question {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 68px;
+  }
+
+  .akomodasi {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    display: block;
+    position: relative;
+  }
+
+  .list-akomodasi {
+    display: inline-flex;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .list-menu-akomodasi {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    padding: 8px 12px;
+    white-space: nowrap;
+  }
+
+  .list-menu-akomodasi i {
+    font-size: 20px;
+    margin-right: 8px;
+  }
+
+  .list-menu-akomodasi span {
+    font-size: 16px;
+  }
+}
